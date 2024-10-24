@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '@aws-amplify/ui-react';
+import { Loader, ThemeProvider } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 //import awsexports from './aws-exports';
@@ -7,6 +7,7 @@ import '@aws-amplify/ui-react/styles.css';
 export default function App() {
   return (
     <ThemeProvider>
+	<Loader />
     </ThemeProvider>
   );
 }
