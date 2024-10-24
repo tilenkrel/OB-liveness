@@ -33,7 +33,7 @@ export default function LivenessQuickStartReact() {
      * This should be replaced with a real call to your own backend API
      */
     const response = await fetch(
-      `/api/get?sessionId=${createLivenessApiData.sessionId}`
+      `/api/get?sessionId=${createLivenessApiData!.sessionId}`
     );
     const data = await response.json();
 
@@ -57,7 +57,7 @@ export default function LivenessQuickStartReact() {
         <Loader />
       ) : (
         <FaceLivenessDetector
-          sessionId={createLivenessApiData.sessionId}
+          sessionId={createLivenessApiData!.sessionId}
           region="us-east-1"
           onAnalysisComplete={handleAnalysisComplete}
           onError={(error) => {
