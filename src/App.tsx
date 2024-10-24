@@ -7,12 +7,13 @@ import '@aws-amplify/ui-react/styles.css';
 
 
 export default function LivenessQuickStartReact() {
-  const [loading, setLoading] = React.useState(true);
-  const [createLivenessApiData, setCreateLivenessApiData] =
-    React.useState(null);
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [createLivenessApiData, setCreateLivenessApiData] = React.useState<{
+    sessionId: string;
+  } | null>(null);
 
   React.useEffect(() => {
-    const fetchCreateLiveness = async () => {
+    const fetchCreateLiveness: () => Promise<void> = async () => {
       /*
        * This should be replaced with a real call to your own backend API
        */
@@ -27,7 +28,7 @@ export default function LivenessQuickStartReact() {
     fetchCreateLiveness();
   }, []);
 
-  const handleAnalysisComplete = async () => {
+  const handleAnalysisComplete: () => Promise<void> = async () => {
     /*
      * This should be replaced with a real call to your own backend API
      */
@@ -67,63 +68,3 @@ export default function LivenessQuickStartReact() {
     </ThemeProvider>
   );
 }
-
-/*export default function App() {
-  return (
-    <ThemeProvider>
-      {loading ? (
-        <Loader />
-      ) : (
-        <FaceLivenessDetector
-          sessionId={createLivenessApiData.sessionId}
-          region="us-east-1"
-          onAnalysisComplete={handleAnalysisComplete}
-          onError={(error) => {
-            console.error(error);
-          }}
-        />
-      )}
-    </ThemeProvider>
-  );
-}*/
-
-/*import { useEffect, useState } from "react";
-import type { Schema } from "../amplify/data/resource";
-import { generateClient } from "aws-amplify/data";
-
-const client = generateClient<Schema>();
-
-function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-
-  useEffect(() => {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
-    });
-  }, []);
-
-  function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
-  }
-
-  return (
-    <main>
-      <h1>My todos</h1>
-      <button onClick={createTodo}>+ new</button>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.content}</li>
-        ))}
-      </ul>
-      <div>
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
-          Review next step of this tutorial.
-        </a>
-      </div>
-    </main>
-  );
-}
-
-export default App;*/
