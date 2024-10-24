@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
-import { FaceLivenessDetector } from '@aws-amplify/ui-react-liveness';
-import React from 'react';
-import { ThemeProvider } from '@aws-amplify/ui-react';
-import { Amplify } from 'aws-amplify';
-import '@aws-amplify/ui-react/styles.css';
+//import { FaceLivenessDetector } from '@aws-amplify/ui-react-liveness';
+//import React from 'react';
+//import { ThemeProvider } from '@aws-amplify/ui-react';
+//import { Amplify } from 'aws-amplify';
+//import '@aws-amplify/ui-react/styles.css';
 
 const client = generateClient<Schema>();
 
