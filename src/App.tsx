@@ -1,6 +1,6 @@
-import React from 'react';
+//import React from 'react';
 import { Loader, ThemeProvider } from '@aws-amplify/ui-react';
-import { Amplify } from 'aws-amplify';
+//import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 //import awsexports from './aws-exports';
 
